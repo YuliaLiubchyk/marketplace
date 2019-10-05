@@ -1,0 +1,33 @@
+.container {
+    width: 46px;
+	height: 46px;
+	background: #F1C40F;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+    border-radius: 50px;
+    text-align: center;
+    display: table;
+    float: right;
+    margin: 20px 20px auto auto;
+    position: relative;
+}
+
+.inner-container {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.logout-container {
+    position: absolute;
+    width: 204px;
+    height: 150px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    right: 300px;
+    margin: 66px 0px auto auto;
+}
+
+.logout-text {
+    color: black;
+}

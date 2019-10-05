@@ -1,10 +1,11 @@
 import React from "react";
 import { Route, Switch, Redirect } from 'react-router-dom';
-import Login from "../Login/Login";
-import Register from "../Register/Register";
+import Login from "../Login/LoginContainer";
+import Register from "../Register/RegisterView";
 import { Header, Footer } from "../../components/index.js";
 import { routes } from "../routes.js";
 import Api from "../../api";
+import {connect} from 'react-redux';
 
 function Auth() {
     return (<Route path={routes.auth} >
@@ -19,4 +20,4 @@ function Auth() {
     );
 }
 
-export default Auth;
+export default connect()(Auth);

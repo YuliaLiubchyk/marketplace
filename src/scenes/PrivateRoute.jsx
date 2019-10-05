@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import Api from '../api';
 import {routes} from './routes';
+import {connect} from 'react-redux';
 
 function PrivateRoute({ component: Component, ...rest }) {
     return (
@@ -15,4 +16,4 @@ function PrivateRoute({ component: Component, ...rest }) {
     )
 }
 
-export default PrivateRoute;
+export default connect()(PrivateRoute);
