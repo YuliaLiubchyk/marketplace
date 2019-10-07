@@ -3,7 +3,8 @@ import axios from 'axios';
 const urls = {
     login: '/api/auth/login',
     regiter: '/api/auth/register',
-    getViewer: '/api/account/user'
+    getViewer: '/api/account/user',
+    getLatestProducts: '/products/latest'
 };
 
 export const Auth = {
@@ -64,6 +65,12 @@ export const Auth = {
 export const Viewer = {
     get() {
         return axios.get(urls.getViewer);
+    }
+}
+
+export const Products = {
+    latest() {
+        return axios.get(urls.getLatestProducts);
     }
 }
 
