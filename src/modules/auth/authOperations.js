@@ -8,10 +8,11 @@ export const register = (body) => {
             dispatch(actions.register.start());
 
             const res = await Api.Auth.register(body);
-            const {user, token} = res.data;
+            const { token } = res.data;
             Api.Auth.setToken(token);
+            await dispatch(fetchViewer());
 
-            dispatch(actions.register.success(user));
+            dispatch(actions.register.success());
         } catch (err) {
             dispatch(actions.register.error({ message: err.message }));
         }
@@ -24,10 +25,11 @@ export const login = (body) => {
             dispatch(actions.login.start());
 
             const res = await Api.Auth.login(body);
-            const {token} = res.data;
+            const { token } = res.data;
             Api.Auth.setToken(token);
-            const user = await dispatch(fetchViewer()); //TODO:: set user from login res
-            dispatch(actions.login.success(user));
+            await dispatch(fetchViewer());
+
+            dispatch(actions.login.success());
         } catch (err) {
             dispatch(actions.login.error({ message: err.message }));
         }
@@ -40,10 +42,10 @@ export const logout = () => {
             dispatch(actions.logout.start());
 
             Api.Auth.logout();
-            
+
             dispatch(actions.logout.success());
-        } catch(err) {
-            dispatch(actions.logout.error({message: err.message}));
+        } catch (err) {
+            dispatch(actions.logout.error({ message: err.message }));
         }
     }
 }

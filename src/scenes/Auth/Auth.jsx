@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch, Redirect } from 'react-router-dom';
 import Login from "../Login/LoginContainer";
-import Register from "../Register/RegisterView";
+import Register from "../Register/RegisterContainer";
 import { Header, Footer } from "../../components/index.js";
 import { routes } from "../routes.js";
 import Api from "../../api";

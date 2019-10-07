@@ -31,16 +31,14 @@ export const reducer = handleActions({
             error: null
         }
     }),
-    [actions.register.success]: (state) => {
-        debugger;
-        return ({
-            ...state,
-            register: {
-                ...state.register,
-                isLoading: false
-            }
-        })
-    },
+    [actions.register.success]: (state) => ({
+        ...state,
+        register: {
+            ...state.register,
+            isLoading: false
+        },
+        isLoggedIn: true
+    }),
     [actions.register.error]: (state, action) => ({
         ...state,
         register: {
