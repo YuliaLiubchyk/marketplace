@@ -2,9 +2,9 @@ import axios from 'axios';
 
 const urls = {
     login: '/api/auth/login',
-    regiter: '/api/auth/register',
+    register: '/api/auth/register',
     getViewer: '/api/account/user',
-    getLatestProducts: '/products/latest'
+    getLatestProducts: '/api/products/latest'
 };
 
 export const Auth = {
@@ -26,7 +26,7 @@ export const Auth = {
     },
 
     register(body) {
-        return axios.post(urls.regiter, body);
+        return axios.post(urls.register, body);
     },
 
     logout() {
@@ -58,22 +58,22 @@ export const Auth = {
     },
 
     get isLoggedIn() {
-        return this._token != null;
+        return this._token !== null;
     }
-}
+};
 
 export const Viewer = {
     get() {
         return axios.get(urls.getViewer);
     }
-}
+};
 
 export const Products = {
     latest() {
         return axios.get(urls.getLatestProducts);
     }
-}
+};
 
 export const init = () => {
     Auth.init();
-}
+};

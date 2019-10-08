@@ -1,15 +1,15 @@
 import React from 'react';
-import s from './Home.module.scss';
-import { Header, Footer } from '../../components/index.js';
+import {Footer, Header} from '../../components/index.js';
+import LatestList from '../LatestList/LatestListContainer';
 
 function Home() {
-    return (
-        <div>
-            <Header theme="dark" />
-            <div className={s.container}>Home</div>
-            <Footer />
-        </div>
-    );
+  return (
+    <div>
+      <Header theme="dark"/>
+      <LatestList/>
+      <Footer/>
+    </div>
+  );
 }
 
 export default Home;

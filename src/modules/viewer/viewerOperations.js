@@ -11,4 +11,4 @@ export const fetchViewer = () => {
             dispatch(actions.fetchViewer.error({ message: err.message }));
         }
     }
-}
+};
