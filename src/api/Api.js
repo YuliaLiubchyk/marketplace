@@ -1,3 +1,10 @@
+import axios from 'axios';
+
+const urls = {
+    login: '/api/auth/login',
+    regiter: '/api/auth/register',
+    getViewer: '/api/account/user'
+};
 
 export const Auth = {
 
@@ -5,26 +12,36 @@ export const Auth = {
 
     init() {
         try {
-            const token = window.localStorage.getItem('token');
+            const token = JSON.parse(window.localStorage.getItem('token'));
             this._token = token;
+            this._storeInAxios(token);
         } catch (err) {
             console.error(err);
         }
     },
 
-    login() {
-        this._token = 'token';
-        this._storeToken();
+    login(body) {
+        return axios.post(urls.login, body);
+    },
+
+    register(body) {
+        return axios.post(urls.regiter, body);
     },
 
     logout() {
         this._token = null;
+        this._storeInAxios(null);
         try {
             window.localStorage.removeItem('token');
         } catch (err) {
             console.error(err);
         }
+    },
 
+    setToken(token) {
+        this._token = token;
+        this._storeToken();
+        this._storeInAxios(token);
     },
 
     _storeToken() {
@@ -35,12 +52,21 @@ export const Auth = {
         }
     },
 
+    _storeInAxios(token) {
+        axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+    },
+
     get isLoggedIn() {
-        return false;
-        // return this._token == null;
+        return this._token != null;
     }
 }
 
-export function init() {
+export const Viewer = {
+    get() {
+        return axios.get(urls.getViewer);
+    }
+}
+
+export const init = () => {
     Auth.init();
 }

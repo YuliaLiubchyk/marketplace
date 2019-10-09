@@ -15,11 +15,10 @@ export const routes = {
 };
 
 export function Router() {
-    console.log(Auth);
     return (<BrowserRouter>
         <Switch>
             <Route exact path={routes.home} component={Home} />
-            <PrivateRoute path={routes.inbox} component={Inbox}/>
+            <PrivateRoute path={routes.inbox} component={Inbox} />
             <Auth />
             <Route component={NotFound} />
         </Switch>
