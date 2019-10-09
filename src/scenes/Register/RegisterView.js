@@ -33,13 +33,13 @@ function Register({ handleRegister, handleFieldChange }) {
             />
             <div className={s['button-container']}>
                 <button className={s.button} onClick={handleRegister}>
-                    Register
+                    <span className={s['button-label']}>Register</span>
             </button>
             </div>
         </div>
         <div className={`${s.container} ${s['login-container']}`}>
-            <span>I already have an account, </span>
-            <Link to={routes.login}>LOG IN</Link>
+            <span className={s['footer-text']}>I already have an account, </span>
+            <Link to={routes.login} className={`${s['footer-text']} ${s['footer-text-color']}`}>LOG IN</Link>
         </div>
     </div>
 }
