@@ -1,35 +1,62 @@
 .container {
-    background: #FFFFFF;
-    box-shadow: 0px 2px 42px rgba(0, 0, 0, 0.111233);
-    border-radius: 7px;
-    width: 425px;
-    margin: 0 auto;
+  background: #FFFFFF;
+  box-shadow: 0 2px 42px rgba(0, 0, 0, 0.111233);
+  border-radius: 7px;
+  width: 425px;
+  margin: 0 auto;
 }
 
 .form-container {
-    height: 365px;
+  height: 290px;
 }
 
 .button {
-   background-color: #349A89;
-   border-radius: 5px;
-   width: 350px;
-   height: 50px;
+  background-color: #349A89;
+  border-radius: 5px;
+  width: 350px;
+  height: 50px;
+  outline: none;
 }
 
 .button-container {
-    text-align: center;
-    margin: 16px;
+  text-align: center;
+  margin: 16px;
 }
 
 .register-container {
-    height: 56px;
-    margin-top: 20px;
-    text-align: center;
-    vertical-align: bottom !important;
+  height: 56px;
+  margin-top: 20px;
+  text-align: center;
 }
 
-.login{
-    margin-bottom: 36px;
-    text-align: center;
+.login {
+  font-family: Helvetica;
+  font-size: 22px;
+  margin-bottom: 36px;
+  text-align: center;
+}
+
+@font-face {
+  font-family: "Helvetica";
+  src: url(../../resources/HelveticaRegular.ttf);
+}
+
+.footer-text {
+  font-family: Helvetica;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+.footer-text-color {
+  color: #349A89;
+}
+
+.button-label {
+  font-family: Helvetica;
+  color: white;
+  font-size: 16px;
+  letter-spacing: 0.4px;
+  font-weight: normal;
 }
