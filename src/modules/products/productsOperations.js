@@ -13,4 +13,4 @@ export const fetchLatest = () => {
             dispatch(actions.fetchLatest.error({ message: err.message }));
         }
     }
-}
+};

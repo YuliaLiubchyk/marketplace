@@ -5,20 +5,13 @@ import Auth from './Auth/Auth';
 import NotFound from './NotFound/NotFound';
 import Inbox from './Inbox/Inbox';
 import PrivateRoute from './PrivateRoute';
-
-export const routes = {
-  home: "/",
-  auth: "/auth",
-  login: "/auth/login",
-  register: "/auth/register",
-  inbox: "/inbox"
-};
+import {HOME, INBOX } from '../constants/routesConstants';
 
 export function Router() {
   return (<BrowserRouter>
     <Switch>
-      <Route exact path={routes.home} component={Home}/>
-      <PrivateRoute path={routes.inbox} component={Inbox}/>
+      <Route exact path={HOME} component={Home}/>
+      <PrivateRoute path={INBOX} component={Inbox}/>
       <Auth/>
       <Route component={NotFound}/>
     </Switch>

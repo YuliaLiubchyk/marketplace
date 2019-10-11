@@ -21,7 +21,7 @@
     height: 56px;
     margin-top: 20px;
     text-align: center;
-    vertical-align: bottom !important;
+    display: table;
 }
 
 .button {
@@ -30,11 +30,16 @@
     width: 350px;
     height: 50px;
     outline: none;
+    margin-left: 20px;
+    display: table-cell;
+    vertical-align: middle;
  }
  
  .button-container {
      text-align: center;
-     margin: 16px;
+     margin-left: 36px;
+     margin-top: 16px;
+     display: table;
  }
 
 @font-face {
@@ -60,4 +65,9 @@
     font-size: 16px;
     letter-spacing: 0.4px;
     font-weight: normal;
-}
+}
+
+.login-text {
+    display: table-cell;
+    vertical-align: middle;
+}

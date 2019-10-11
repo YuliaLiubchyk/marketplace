@@ -11,8 +11,7 @@ class LatestListView extends Component {
     }
 
     render() {
-        return <div></div>
-        //this.state.latestProductsList.map((item) => <li>item</li>);
+        return this.state.latestProductsList.map((item) => <li key={item.id}>{item.title}</li>);
     }
 
 }

@@ -9,6 +9,9 @@ const mapStateToProps = (state) => {
 };
 
 function LatestList({latestProductsList}) {
+  if(!latestProductsList){
+    return <div>Loading...</div>
+  }
   return <LatestListView
     latestProductsList={latestProductsList}
   />
