@@ -23,7 +23,7 @@ function Register({handleRegister, handleFieldChange}) {
       <Input
         label='full name'
         name='fullName'
-        placeholder='Tony Start'
+        placeholder='Tony Stark'
         onChange={handleFieldChange}
       />
       <Input

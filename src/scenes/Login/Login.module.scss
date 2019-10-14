@@ -70,3 +70,18 @@
   display: table-cell;
   vertical-align: middle;
 }
+
+.hint {
+  font-family: Helvetica;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: right;
+  letter-spacing: 0.4px;
+  margin-right: 38px;
+  margin-top: 4px;
+}
+
+.hint-text {
+  text-decoration: none;
+  color: #8C8C8C;
+}

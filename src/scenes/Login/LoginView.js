@@ -1,10 +1,10 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import {Input} from '../../components/index';
+import { Link } from 'react-router-dom';
+import { Input } from '../../components/index';
 import s from './Login.module.scss';
-import {REGISTER} from '../../constants/routesConstants';
+import { REGISTER } from '../../constants/routesConstants';
 
-function Login({handleLogin, handleFieldChange, isLoading}) {
+function Login({ handleLogin, handleFieldChange, isLoading }) {
   const _handleEnterPressed = (e) => {
     if (e.key === 'Enter') {
       handleLogin()
@@ -18,12 +18,15 @@ function Login({handleLogin, handleFieldChange, isLoading}) {
         label='email'
         name='email'
         placeholder='Example@gmail.com'
-        onChange={handleFieldChange}/>
+        onChange={handleFieldChange} />
       <Input
         type='password'
         name='password'
         label='password'
-        onChange={handleFieldChange}/>
+        onChange={handleFieldChange} />
+      <div className={s.hint}>
+        <Link to={REGISTER} className={s['hint-text']}>Don't remember password?</Link>
+      </div>
       <div className={s['button-container']}>
         <div onClick={handleLogin} className={s.button}>
           <span className={s['button-label']}>{isLoading ? 'Loading' : 'Continue'}</span>
@@ -40,7 +43,7 @@ function Login({handleLogin, handleFieldChange, isLoading}) {
 
 
     </div>
-  </div>);
+  </div >);
 }
 
 export default Login;
