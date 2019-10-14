@@ -14,25 +14,46 @@ const mapDispatchToProps = {
     handleLogout: logout
 }
 
+const mockUserInfo = {
+    firstLetterName: 'U',
+    fullName: 'User',
+    email: 'example@g,ail.com'
+};
+
 function Logout({ isLoading, user, handleLogout }) {
     const [isHovered, setHovered] = useState(false);
-    const name = isLoading ? 'U' : user.fullName.charAt(0);
+    const userInfo = isLoading
+        ? mockUserInfo
+        : {
+            firstLetterName: user.fullName.charAt(0),
+            fullName: user.fullName,
+            email: user.email
+        };
 
     return <div
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}>
-        <div className={s.container}>
-            <div className={s['inner-container']}>
-                {name}
+        <div className={`${s.container}  ${s['right-icon']}`}>
+            <div className={`${s['inner-container']}`}>
+                {userInfo.firstLetterName}
             </div>
         </div>
         {isHovered && <div className={s['logout-container']}>
-            <div onClick={handleLogout} className={s.container}>
+            <div onClick={handleLogout} className={`${s.container} ${s['left-icon']}`}>
                 <div className={s['inner-container']}>
-                    {name}
+                    {userInfo.firstLetterName}
                 </div>
             </div>
-            <div onClick={handleLogout} className={s['logout-text']}>LOGOUT</div>
+            <div className={s.name}>{userInfo.fullName}</div>
+            <div className={s.email}>{userInfo.email}</div>
+            <div className={s.profile}>Profile</div>
+            <div className={`${s.link} ${s.edit}`}>EDIT PROFILE</div>
+            <hr className={s.line} />
+            <div
+                onClick={handleLogout}
+                className={s.link}>
+                LOGOUT
+            </div>
         </div>}
     </div>
 
