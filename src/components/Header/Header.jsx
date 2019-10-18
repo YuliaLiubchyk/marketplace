@@ -14,7 +14,7 @@ function Header(props) {
         <Logo className={s[`${props.theme}`]} />
       </div>
       <Link to={HOME} className={`${s.link} ${s[`${props.theme}`]} ${s['link-header']}`}>
-        <Heart />
+        <Heart className={s[`${props.theme}`]}/>
       </Link>
       {Api.Auth.isLoggedIn
         ? <Logout />
