@@ -16,7 +16,7 @@ class LatestListView extends Component {
     const productsList = this.state.latestProductsList;
     return <div className={s.container}>
       <div className={s.grid}>
-        {productsList.map((item) => <ProductContainer key={item.id} product={item}/>)};
+        {productsList.map((item) => <ProductContainer key={item.id} product={item}/>)}
       </div>
     </div>
 
