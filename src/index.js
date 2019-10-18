@@ -1,9 +1,10 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import {connect, Provider} from 'react-redux';
-import {Router} from "./scenes/routes.js";
-import {store} from './store/createStore';
+import { connect, Provider } from 'react-redux';
+import { Router } from "./scenes/routes.js";
+import { store } from './store/createStore';
 import * as appOperations from './modules/app/appOperations';
+import s from './Index.module.scss';
 
 class App extends Component {
 
@@ -13,10 +14,10 @@ class App extends Component {
 
   render() {
     if (this.props.isLoading) {
-      return <div>Loading...</div>
+      return <div className={s.roller}><div /><div /><div /><div /><div /><div /><div /><div /></div>
     }
     return <div>
-      <Router/>
+      <Router />
     </div>
   }
 }
@@ -31,7 +32,7 @@ const mapStateToProps = (state) => {
 const ConnectedApp = connect(mapStateToProps)(App);
 
 const ReduxApp = <Provider store={store}>
-  <ConnectedApp/>
+  <ConnectedApp />
 </Provider>;
 
 ReactDOM.render(ReduxApp, document.getElementById('root'));

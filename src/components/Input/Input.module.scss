@@ -35,3 +35,11 @@
     font-size: 12px;
     letter-spacing: 0.4px;
 }
+
+input[type="password"]{
+    background-image: url("../../assets/Shape.svg");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-origin: content-box;
+    padding-right: 10px;
+}

@@ -7,11 +7,11 @@ const mapStateToProps = (state) => {
     return {
         isLoading: state.auth.login.isLoading
     };
-}
+};
 
 const mapDispatchToProps = {
     handleLogin: login
-}
+};
 
 function Login({ handleLogin, isLoading}) {
     const [fields, setFields] = useState({ email: '', password: '' });

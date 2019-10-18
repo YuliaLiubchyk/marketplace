@@ -1,6 +1,6 @@
 import React from 'react';
 import LatestListView from './LatestListView';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => {
   return {
@@ -8,13 +8,11 @@ const mapStateToProps = (state) => {
   }
 };
 
-function LatestList({latestProductsList}) {
-  if(!latestProductsList){
-    return <div>Loading...</div>
-  }
-  return <LatestListView
-    latestProductsList={latestProductsList}
-  />
+function LatestList({ latestProductsList }) {
+  return latestProductsList
+    ? <LatestListView
+      latestProductsList={latestProductsList} />
+    : <div>Loading...</div>;
 }
 
 export default connect(mapStateToProps)(LatestList);

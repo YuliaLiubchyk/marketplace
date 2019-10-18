@@ -25,17 +25,41 @@
 }
 
 .link{
+    font-family: Helvetica;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
     float: right;
     text-align: center;
     padding: 12px;
     text-decoration: none;
-    font-size: 18px;
     line-height: 25px;
     border-radius: 4px;
     background: inherit;
     margin-top: 20px;
+    margin-right: 1%;
 }
 
 .link-header{
-    margin-right: 200px;
+    margin-right: 10%;
+}
+
+.button {
+    font-family: Helvetica;
+    font-size: 14px;
+    background: #349A89;
+    border-radius: 4px;
+    text-transform: uppercase;
+    float: right;
+    text-align: center;
+    margin-top: 27px;
+    padding: 12px;
+    margin-right: 1%;
+    line-height: 8px;
+    width: 6%;
+}
+
+.button-label {
+    text-decoration: none;
+    color: #FFFFFF;
 }
