@@ -8,7 +8,7 @@ const INITIAL_STATE = {
         error: null
     },
     user: null
-}
+};
 
 export const reducer = handleActions({
     [actions.fetchViewer.start]: (state) => ({
