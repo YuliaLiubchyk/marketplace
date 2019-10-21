@@ -1,4 +1,4 @@
-import {handleActions} from '@letapp/redux-actions';
+import { handleActions } from '@letapp/redux-actions';
 import * as actions from './productsActions';
 
 const INITIAL_STATE = {

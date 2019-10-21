@@ -25,7 +25,7 @@ class App extends Component {
 const mapStateToProps = (state) => {
   return {
     isLoading: state.app.isLoading,
-    isLoggedIn: state.auth.isLoggedIn
+    isLoggedIn: state.auth.isLoggedIn,
   }
 };
 

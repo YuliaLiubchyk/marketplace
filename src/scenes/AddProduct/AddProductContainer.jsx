@@ -1,9 +1,13 @@
 import React from 'react';
 import AddProductView from './AddProductView';
+import { Header } from '../../components/index';
 import { connect } from 'react-redux';
 
 function AddProductContainer() {
-    return <AddProductView />
+    return <div>
+        <Header theme="dark" />
+        <AddProductView />
+    </div>
 
 }
 
