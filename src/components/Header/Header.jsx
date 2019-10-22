@@ -10,11 +10,11 @@ import Logout from '../Logout/Logout';
 function Header(props) {
   return (<div className={`${s.header} ${s[`${props.theme}`]}`}>
     <header>
-      <div className={s.logo}>
-        <Logo className={s[`${props.theme}`]} />
-      </div>
+      <Link to={HOME} className={s.logo}>
+        <Logo className={` ${s[`${props.theme}`]} ${s['logo-fon']}`} />
+      </Link>
       <Link to={HOME} className={`${s.link} ${s[`${props.theme}`]} ${s['link-header']}`}>
-        <Heart className={s[`${props.theme}`]}/>
+        <Heart className={s[`${props.theme}`]} />
       </Link>
       {Api.Auth.isLoggedIn
         ? <Logout />
