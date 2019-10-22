@@ -8,3 +8,33 @@
     box-shadow: 0px 2px 42px rgba(0, 0, 0, 0.111233);
     border-radius: 7px;
 }
+
+.button-container {
+    text-align: center;
+    margin-left: 36px;
+    margin-top: 32px;
+}
+
+.button {
+    background-color: #349A89;
+    border-radius: 5px;
+    width: 350px;
+    height: 50px;
+    outline: none;
+    display: table;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button-label {
+    font-family: Helvetica;
+    color: white;
+    font-size: 16px;
+    letter-spacing: 0.4px;
+    font-weight: normal;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+  

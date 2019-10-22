@@ -13,10 +13,12 @@ const mapStateToProps = (state) => {
 function ProductModal({ latestProductsList }) {
     const history = useHistory();
     const { id } = useParams();
+    document.body.classList.add('scroll-hidden');
 
     const back = e => {
         e.stopPropagation();
         history.goBack();
+        document.body.classList.remove('scroll-hidden');
     };
 
     const product = latestProductsList.find(product => product.id === id);
