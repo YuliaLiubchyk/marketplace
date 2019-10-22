@@ -7,8 +7,10 @@ import Inbox from './Inbox/Inbox';
 import PrivateRoute from './PrivateRoute';
 import ProductContainer from './ProductView/ProductContainer';
 import ProductModal from './ProductView/ProductModal';
-import { HOME, INBOX, ADD_PRODUCTS, PRODUCT } from '../constants/routesConstants';
+import { HOME, INBOX, ADD_PRODUCTS, PRODUCT, PROFILE, EDIT_PROFILE } from '../constants/routesConstants';
 import AddProductContainer from '../scenes/AddProduct/AddProductContainer';
+import ProfileContainer from './Profile/ProfileContainer';
+import EditProfileContainer from './EditProfile/EditProfileContainer';
 
 function ModalSwitch() {
   const location = useLocation();
@@ -19,6 +21,8 @@ function ModalSwitch() {
       <Route exact path={HOME} component={Home} />
       <Route exact path={PRODUCT} component={ProductContainer} />
       <PrivateRoute exact path={INBOX} component={Inbox} />
+      <PrivateRoute exact path={PROFILE} component={ProfileContainer} />
+      <PrivateRoute exact path={EDIT_PROFILE} component={EditProfileContainer} />
       <Auth />
       <Route component={NotFound} />
     </Switch >
