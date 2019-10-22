@@ -1,0 +1,40 @@
+.container {
+    height: 300px;
+    width: 300px;
+    background: #FFFFFF;
+    border: 1px solid #E4E4E4;
+    box-sizing: border-box;
+    box-shadow: 0 4px 14px rgba(121, 121, 121, 0.0527344);
+    border-radius: 4px;
+}
+
+.image-container {
+    height: 240px;
+    width: 292px;
+    border-radius: 4px 4px 0 0;
+    text-align: center;
+    border: solid #FAFAFA;
+}
+
+  .image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+  .title {
+    font-family: Helvetica;
+    font-size: 15px;
+    line-height: 17px;
+    color: #373738;
+    margin: 6px 0 6px 8%;
+}
+
+.price {
+  font-family: Helvetica;
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: bold;
+  color: #101010;
+  margin-left: 8%;
+}

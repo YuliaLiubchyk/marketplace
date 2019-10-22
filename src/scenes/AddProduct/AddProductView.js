@@ -11,7 +11,7 @@ function AddProduct() {
     location: ''
   };
 
-  return <div>
+  return <div className={s.container}>
     <FormContainer initialValue={initialValue} >
       <FormInput
         name='title'

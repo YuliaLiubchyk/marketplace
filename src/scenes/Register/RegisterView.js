@@ -11,7 +11,7 @@ function Register({handleRegister, handleFieldChange}) {
     }
   };
 
-  return <div onKeyDown={_handleEnterPressed}>
+  return <div onKeyDown={_handleEnterPressed} className={s['main-container']}>
     <div className={`${s.container} ${s['form-container']}`}>
       <div className={s.register}>Register</div>
       <Input

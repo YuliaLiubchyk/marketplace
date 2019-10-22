@@ -11,8 +11,8 @@ function Login({ handleLogin, handleFieldChange, isLoading }) {
     }
   };
 
-  return (<div onKeyDown={_handleEnterPressed}>
-    <div className={`${s.container} ${s['form-container']}`}>
+  return (<div onKeyDown={_handleEnterPressed} className={s.container}>
+    <div className={`${s['form-container']} ${s['form-container']}`}>
       <div className={s.login}>Login</div>
       <Input
         label='email'
@@ -33,7 +33,7 @@ function Login({ handleLogin, handleFieldChange, isLoading }) {
         </div>
       </div>
     </div>
-    <div className={`${s.container} ${s['register-container']}`}>
+    <div className={`${s['form-container']} ${s['register-container']}`}>
       <div className={s['register-text']}>
         <span className={s['footer-text']}>I have no account, </span>
         <Link to={REGISTER} className={`${s['footer-text']} ${s['footer-text-color']}`}>

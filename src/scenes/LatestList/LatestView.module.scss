@@ -1,0 +1,17 @@
+.container {
+  margin-left: 10%;
+  margin-right: 8%;
+  margin-top: 6%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 10px;
+  align-items: stretch;
+}
+
+.link {
+  text-decoration: none;
+  font-weight: normal;
+}

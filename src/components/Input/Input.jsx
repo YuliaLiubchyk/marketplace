@@ -12,7 +12,6 @@ function Input({ label, name, onChange, ...props }) {
                     className={s.inputRectangle}
                     name={name}>
                 </input>
-                {/* {props.type === 'password' && <ShowPassword />} */}
             </div>
 
         </label>

@@ -1,3 +1,7 @@
+.main-container {
+    min-height: 78vh;
+  }
+
 .container {
     background: #FFFFFF;
     box-shadow: 0 2px 42px rgba(0, 0, 0, 0.111233);
@@ -11,15 +15,16 @@
     text-align: center;
     font-family: Helvetica;
     font-size: 22px;
+    padding-top: 16px;
 }
 
 .form-container {
-    height: 440px;
+    height: 480px;
 }
 
 .login-container {
     height: 56px;
-    margin-top: 20px;
+    margin-top: 46px;
     text-align: center;
     display: table;
 }
@@ -38,7 +43,7 @@
  .button-container {
      text-align: center;
      margin-left: 36px;
-     margin-top: 16px;
+     margin-top: 46px;
      display: table;
  }
 

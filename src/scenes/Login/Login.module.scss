@@ -1,4 +1,8 @@
 .container {
+  min-height: 78vh;
+}
+
+.form-container {
   background: #FFFFFF;
   box-shadow: 0 2px 42px rgba(0, 0, 0, 0.111233);
   border-radius: 7px;
@@ -7,7 +11,7 @@
 }
 
 .form-container {
-  height: 290px;
+  height: 320px;
 }
 
 .button {
@@ -22,7 +26,7 @@
 .button-container {
   text-align: center;
   margin-left: 36px;
-  margin-top: 16px;
+  margin-top: 32px;
 }
 
 .register-container {
@@ -35,7 +39,8 @@
 .login {
   font-family: Helvetica;
   font-size: 22px;
-  margin-bottom: 36px;
+  margin-bottom: 26px;
+  padding-top: 10px;
   text-align: center;
 }
 
