@@ -2,7 +2,23 @@
     overflow: hidden;
     padding: 0 0;
     margin: 0 0;
-    height: 100px;
+    height: 166px;
+
+    header {
+        max-width: 1620px;;
+        margin: 0 auto;
+        height: 130px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.profileWrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 120px;
 }
 
 .dark {
@@ -17,30 +33,33 @@
     color: #2B2B2B;
 }
 
-.logo {
-    float: left;
-    padding: 18px 0 0 97px;
-    height: 42px;
-}
-
 .link{
     font-family: Helvetica;
     font-size: 12px;
     letter-spacing: 1px;
     text-transform: uppercase;
-    float: right;
     text-align: center;
     padding: 12px;
     text-decoration: none;
     line-height: 25px;
     border-radius: 4px;
     background: inherit;
-    margin-top: 20px;
-    margin-right: 1%;
 }
 
-.link-header{
-    margin-right: 10%;
+.wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    max-width: 1440px;
+
+
+    & > div {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+
 }
 
 .button {
@@ -51,11 +70,9 @@
     text-transform: uppercase;
     float: right;
     text-align: center;
-    margin-top: 27px;
-    padding: 12px;
-    margin-right: 2%;
+    padding: 12px 49px;
     line-height: 8px;
-    width: 6%;
+    margin: 4px;
 }
 
 .button-label {

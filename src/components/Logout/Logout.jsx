@@ -35,23 +35,28 @@ function Logout({ isLoading, user, handleLogout }) {
     return <div
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}>
-        <div className={`${s.container}  ${s['right-icon']}`}>
+        <div className={`${s.container}`}>
             <div className={`${s['inner-container']}`}>
                 {userInfo.firstLetterName}
             </div>
         </div>
         {isHovered && <div className={s['logout-container']}>
-            <div className={`${s.container} ${s['left-icon']}`}>
-                <div className={s['inner-container']}>
-                    {userInfo.firstLetterName}
-                </div>
+          <div className={s['personal-info-wrapper']}>
+            <div className={`${s.container} ${s.margin}`}>
+              <div className={s['inner-container']}>
+                {userInfo.firstLetterName}
+              </div>
             </div>
-            <div className={s.name}>{userInfo.fullName}</div>
-            <div className={s.email}>{userInfo.email}</div>
-            <div className={s.profile}>
-                <Link to={PROFILE} className={s.link}>Profile</Link>
+            <div>
+              <div className={s.name}>{userInfo.fullName}</div>
+              <div className={s.email}>{userInfo.email}</div>
+              <div className={s['profile-container']}>
+                <Link to={PROFILE} className={s.profile}>Profile</Link>
+              </div>
             </div>
-            <div className={`${s['link-container']} ${s.edit}`}>
+          </div>
+
+            <div className={`${s['link-container']} ${s.margin}`}>
                 <Link to={EDIT_PROFILE} className={s.link}>EDIT PROFILE</Link>
             </div>
 
