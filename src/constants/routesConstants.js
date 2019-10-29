@@ -5,3 +5,5 @@ export const REGISTER = "/auth/register";
 export const INBOX = "/inbox";
 export const ADD_PRODUCTS = "/products/add";
 export const PRODUCT = "/products/:id";
+export const EDIT_PROFILE = "/user/edit";
+export const PROFILE = "/user";

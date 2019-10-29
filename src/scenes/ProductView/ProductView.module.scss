@@ -1,5 +1,5 @@
 .modal {
-    position: absolute;
+    position: fixed;
     background: #ffffff;
     left: 25%;
     top: 15%;
@@ -11,7 +11,7 @@
 }
 
 .background {
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
@@ -68,7 +68,7 @@
     text-transform: uppercase;
     text-align: center;
     line-height: 34px;
-    width: 34%;
+    width: 30%;
     color: #FFFFFF;
     margin-left: 2%;
     margin-top: 2%;
@@ -81,7 +81,7 @@
     font-size: 14px;
     text-transform: uppercase;
     line-height: 30px;
-    width: 34%;
+    width: 30%;
     margin-left: 4%;
     margin-top: 2%;
     color: #535353;

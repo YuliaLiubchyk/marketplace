@@ -16,11 +16,32 @@ function AddProduct() {
       <FormInput
         name='title'
         label='TITLE'
+        placeholder='For example: Iron man suit'
       />
       <FormInput
         name='location'
         label='LOCATION'
+        placeholder='For example: Los Angeles, CA'
       />
+      <FormInput
+        name='description'
+        label='DESCRIPTION'
+        placeholder='For example: Iron man suit'
+      />
+      <FormInput
+        name='photos'
+        label='PHOTOS'
+      />
+      <FormInput
+        name='price'
+        label='PRICE'
+        placeholder='For example: 1000'
+      />
+      <div className={s['button-container']}>
+        <div className={s.button}>
+          <span className={s['button-label']}>Submmit</span>
+        </div>
+      </div>
     </FormContainer>
   </div>
 }

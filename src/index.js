@@ -4,17 +4,19 @@ import { connect, Provider } from 'react-redux';
 import { Router } from "./scenes/routes.js";
 import { store } from './store/createStore';
 import * as appOperations from './modules/app/appOperations';
-import s from './Index.module.scss';
+import { Loading } from './components';
+import './styles.scss';
 
 class App extends Component {
 
-  componentDidMount() {
-    this.props.dispatch(appOperations.init());
+  constructor(props) {
+    super(props);
+    props.dispatch(appOperations.init());
   }
 
   render() {
     if (this.props.isLoading) {
-      return <div className={s.roller}><div /><div /><div /><div /><div /><div /><div /><div /></div>
+      return <Loading />
     }
     return <div>
       <Router />

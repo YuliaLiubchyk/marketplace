@@ -3,6 +3,17 @@
     src: url(../../resources/Roboto-Regular.ttf);
 }
 
+.logout-container {
+    position: absolute;
+    width: 204px;
+    height: 150px;
+    background: #FFFFFF;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    right: 194px;
+    margin-top: 6px;
+}
+
 .container {
     width: 46px;
 	height: 46px;
@@ -12,17 +23,13 @@
     border-radius: 50px;
     text-align: center;
     display: table;
-    margin: 20px 20px auto auto;
     position: relative;
+    cursor: pointer;
 }
 
-.right-icon {
-    float: right;
-}
-
-.left-icon {
-    float: left;
-    margin-left: 10px;
+.personal-info-wrapper {
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .inner-container {
@@ -32,23 +39,12 @@
     vertical-align: middle;
 }
 
-.logout-container {
-    position: absolute;
-    width: 204px;
-    height: 150px;
-    background: #FFFFFF;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-    border-radius: 4px;
-    right: 16%;
-    margin: 66px 0 auto auto;
-}
-
 .name {
     font-family: Helvetica;
     font-size: 16px;
     letter-spacing: 1px;
     color: black;
-    margin-top: 20px;
+    margin-top: 12px;
 }
 
 .email {
@@ -58,17 +54,21 @@
     color: #979797;
 }
 
+.profile-container {
+    margin-top: 10px;
+}
+
 .profile {
     font-family: Helvetica;
     font-size: 14px;
     line-height: 20px;
     letter-spacing: 1px;
-    font-weight: bold;
     color: #349A89;
-    margin-top: 10px;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-.link {
+.link-container {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -81,10 +81,15 @@
     cursor: pointer;
 }
 
-.edit {
+.margin {
     margin-top: 16px;
 }
 
 .line {
     border: 1px solid #E4E4E4;
+}
+
+.link {
+    text-decoration: none;
+    color: #349A89;
 }

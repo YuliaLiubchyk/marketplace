@@ -1,6 +1,6 @@
 import * as actions from './authActions';
 import Api from '../../api/index';
-import {fetchViewer} from '../viewer/viewerActions';
+import {fetchViewer} from '../viewer/viewerOperations';
 
 export const register = (body) => {
   return async function register(dispatch) {
@@ -8,9 +8,9 @@ export const register = (body) => {
       dispatch(actions.register.start());
 
       const res = await Api.Auth.register(body);
-      const {user, token} = res.data;
+      const {token} = res.data;
       Api.Auth.setToken(token);
-      dispatch(fetchViewer.success(user));
+      await dispatch(fetchViewer());
 
       dispatch(actions.register.success());
     } catch (err) {
@@ -25,9 +25,9 @@ export const login = (body) => {
       dispatch(actions.login.start());
 
       const res = await Api.Auth.login(body);
-      const {user, token} = res.data;
+      const { token } = res.data;
       Api.Auth.setToken(token);
-      dispatch(fetchViewer.success(user));
+      await dispatch(fetchViewer());
 
       dispatch(actions.login.success());
     } catch (err) {
