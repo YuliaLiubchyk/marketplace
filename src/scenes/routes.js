@@ -26,7 +26,7 @@ function ModalSwitch() {
       <Auth />
       <Route component={NotFound} />
     </Switch >
-    {background && <Route exact path={PRODUCT} children={<ProductModal />} />}
+    {background && <Route path={PRODUCT} children={<ProductModal />} />}
 
   </div>)
 }

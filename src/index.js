@@ -5,11 +5,13 @@ import { Router } from "./scenes/routes.js";
 import { store } from './store/createStore';
 import * as appOperations from './modules/app/appOperations';
 import { Loading } from './components';
+import './styles.scss';
 
 class App extends Component {
 
-  componentDidMount() {
-    this.props.dispatch(appOperations.init());
+  constructor(props) {
+    super(props);
+    props.dispatch(appOperations.init());
   }
 
   render() {
