@@ -1,5 +1,6 @@
 import React from 'react';
 import { FormContainer, FormInput } from '../../components/index';
+import Api from '../../api';
 import s from './AddProduct.module.scss';
 
 function AddProduct() {
