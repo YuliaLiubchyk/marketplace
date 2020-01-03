@@ -6,12 +6,21 @@ import { store } from './store/createStore';
 import * as appOperations from './modules/app/appOperations';
 import { Loading } from './components';
 import './styles.scss';
+import { useHistory } from 'react-router-dom';
 
 class App extends Component {
 
   constructor(props) {
     super(props);
     props.dispatch(appOperations.init());
+    console.log("constructor");
+  }
+
+  componentDidMount(props) {
+    // const history = useHistory();
+    // history.replace()
+    console.log(props)
+    console.log("did mount");
   }
 
   render() {

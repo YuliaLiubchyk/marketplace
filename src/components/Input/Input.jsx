@@ -1,6 +1,5 @@
 import React from 'react';
 import s from './Input.module.scss';
-import { ReactComponent as ShowPassword } from '../../assets/Shape.svg';
 
 function Input({ label, name, onChange, ...props }) {
     return <div>
@@ -10,12 +9,9 @@ function Input({ label, name, onChange, ...props }) {
                 <input {...props}
                     onChange={(e) => onChange(name, e.target.value)}
                     className={s.inputRectangle}
-                    name={name}>
-                </input>
+                    name={name} />
             </div>
-
         </label>
-
     </div>
 }
 
