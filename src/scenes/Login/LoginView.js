@@ -12,7 +12,7 @@ function Login({ handleLogin, handleFieldChange, isLoading }) {
   };
 
   return (<div onKeyDown={_handleEnterPressed} className={s.container}>
-    <div className={`${s['form-container']} ${s['form-container']}`}>
+    <div className={s['form-container']}>
       <div className={s.login}>Login</div>
       <Input
         label='email'
