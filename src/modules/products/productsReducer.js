@@ -7,7 +7,12 @@ const INITIAL_STATE = {
     isError: false,
     error: null
   },
-  latestProducts: null
+  latestProducts: null,
+  uploadProduct: {
+    isLoading: false,
+    isError: false,
+    error: null
+  }
 };
 
 export const reducer = handleActions({
@@ -32,6 +37,31 @@ export const reducer = handleActions({
     ...state,
     fetchLatest: {
       ...state.fetchLatest,
+      isLoading: false,
+      isError: true,
+      error: action.payload
+    }
+  }),
+  //upload product
+  [actions.uploadProduct.start]: (state) => ({
+    ...state,
+    uploadProduct: {
+      isLoading: true,
+      isError: false,
+      error: null
+    }
+  }),
+  [actions.uploadProduct.success]: (state) => ({
+    ...state,
+    uploadProduct: {
+      ...state.uploadProduct,
+      isLoading: false
+    }
+  }),
+  [actions.uploadProduct.error]: (state, action) => ({
+    ...state,
+    uploadProduct: {
+      ...state.uploadProduct,
       isLoading: false,
       isError: true,
       error: action.payload

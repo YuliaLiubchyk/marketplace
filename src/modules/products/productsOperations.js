@@ -14,3 +14,15 @@ export const fetchLatest = () => {
         }
     }
 };
+
+export const uploadProduct = (body) => {
+    return async function uploadProduct(dispatch) {
+        try {
+            dispatch(actions.uploadProduct.start());
+            await Api.Products.upload(body);
+            dispatch(actions.uploadProduct.success());
+        } catch (err) {
+            dispatch(actions.uploadProduct.error({ message: err.message }));
+        }
+    }
+};

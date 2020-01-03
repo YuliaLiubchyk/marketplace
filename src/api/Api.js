@@ -4,7 +4,8 @@ const urls = {
     login: '/api/auth/login',
     register: '/api/auth/register',
     getViewer: '/api/account/user',
-    getLatestProducts: '/api/products/latest'
+    getLatestProducts: '/api/products/latest',
+    uploadProduct: '/api/products'
 };
 
 export const Auth = {
@@ -71,6 +72,10 @@ export const Viewer = {
 export const Products = {
     latest() {
         return axios.get(urls.getLatestProducts);
+    },
+
+    upload(product) {
+        axios.post(urls.uploadProduct, product);
     }
 };
 
