@@ -30,12 +30,14 @@ function Register({handleRegister, handleFieldChange}) {
         label='password'
         name='password'
         type='password'
+        isShowProperty={true}
         onChange={handleFieldChange}
       />
       <Input
         label='password again'
         name='passwordAgain'
         type='password'
+        isShowProperty={true}
         onChange={handleFieldChange}
       />
       <div className={s['button-container']}>

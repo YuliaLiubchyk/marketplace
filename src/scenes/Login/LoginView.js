@@ -23,6 +23,7 @@ function Login({ handleLogin, handleFieldChange, isLoading }) {
         type='password'
         name='password'
         label='password'
+        isShowProperty={true}
         onChange={handleFieldChange} />
       <div className={s.hint}>
         <Link to={REGISTER} className={s['hint-text']}>Don't remember password?</Link>
