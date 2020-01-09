@@ -34,27 +34,29 @@ function Logout({ isLoading, user, handleLogout }) {
 
     return <div
         onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}>
+        onMouseLeave={() => setHovered(false)}
+    >
         <div className={`${s.container}`}>
-            <div className={`${s['inner-container']}`}>
+            <span className={`${s['inner-container']}`}>
                 {userInfo.firstLetterName}
-            </div>
+            </span>
         </div>
+
         {isHovered && <div className={s['logout-container']}>
-          <div className={s['personal-info-wrapper']}>
-            <div className={`${s.container} ${s.margin}`}>
-              <div className={s['inner-container']}>
-                {userInfo.firstLetterName}
-              </div>
+            <div className={s['personal-info-wrapper']}>
+                <div className={`${s.container} ${s.margin}`}>
+                    <div className={s['inner-container']}>
+                        {userInfo.firstLetterName}
+                    </div>
+                </div>
+                <div>
+                    <div className={s.name}>{userInfo.fullName}</div>
+                    <div className={s.email}>{userInfo.email}</div>
+                    <div className={s['profile-container']}>
+                        <Link to={PROFILE} className={s.profile}>Profile</Link>
+                    </div>
+                </div>
             </div>
-            <div>
-              <div className={s.name}>{userInfo.fullName}</div>
-              <div className={s.email}>{userInfo.email}</div>
-              <div className={s['profile-container']}>
-                <Link to={PROFILE} className={s.profile}>Profile</Link>
-              </div>
-            </div>
-          </div>
 
             <div className={`${s['link-container']} ${s.margin}`}>
                 <Link to={EDIT_PROFILE} className={s.link}>EDIT PROFILE</Link>
@@ -68,8 +70,6 @@ function Logout({ isLoading, user, handleLogout }) {
             </div>
         </div>}
     </div>
-
-
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Logout);
