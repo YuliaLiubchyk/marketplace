@@ -38,3 +38,22 @@
   color: #101010;
   margin-left: 8%;
 }
+
+.heart-container {
+  width: 46px;
+  height: 46px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  text-align: center;
+  display: table;
+  cursor: pointer;
+  border: solid 1px gray;
+}
+
+.heart-inner-container {
+  font-family: Helvetica;
+  color: black;
+  display: table-cell;
+  vertical-align: middle;
+}

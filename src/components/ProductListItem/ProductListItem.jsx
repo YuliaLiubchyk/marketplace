@@ -6,6 +6,11 @@ function ProductContainer({ product }) {
     <div className={s['image-container']}>
       <img src={product.photos[0]} className={s.image} alt=""/>
     </div>
+    <div className={s['heart-container']}>
+            <span className={s['heart-inner-container']}>
+                U
+            </span>
+        </div>
     <div className={s.title}>
       {product.title}
     </div>
