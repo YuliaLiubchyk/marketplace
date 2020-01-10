@@ -12,6 +12,7 @@ function AddProduct() {
   };
 
   return <div className={s.container}>
+    <div className={s.title}>Add product</div>
     <FormContainer initialValue={initialValue} >
       <FormInput
         name='title'
