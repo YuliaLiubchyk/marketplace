@@ -1,5 +1,6 @@
 import React from 'react';
 import s from './ProductListItem.module.scss';
+import {ReactComponent as Heart} from '../../assets/Heart.svg';
 
 function ProductContainer({ product }) {
   return <div className={s.container}>
@@ -8,7 +9,7 @@ function ProductContainer({ product }) {
     </div>
     <div className={s['heart-container']}>
             <span className={s['heart-inner-container']}>
-                U
+                <Heart className={s.heart}/>
             </span>
         </div>
     <div className={s.title}>
