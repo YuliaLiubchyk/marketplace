@@ -13,8 +13,7 @@ function FormInput({ label, name, ...props }) {
                         value={formState[name]}
                         name={name}
                         onChange={(e) => onChange(name, e)}
-                        className={s.input}>
-                    </input>
+                        className={s.input}/>
                 </label>
             </div>
         )}
