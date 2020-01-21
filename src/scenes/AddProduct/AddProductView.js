@@ -19,27 +19,32 @@ function AddProduct() {
         label='TITLE'
         placeholder='For example: Iron man suit'
         maxLength={25}
+        type='Input'
       />
       <FormInput
         name='location'
         label='LOCATION'
         placeholder='For example: Los Angeles, CA'
         maxLength={25}
+        type='Input'
       />
       <FormInput
         name='description'
         label='DESCRIPTION'
         placeholder='For example: Iron man suit'
+        type='TextArea'
       />
       <FormInput
         name='photos'
         label='PHOTOS'
+        type='Input'
       />
       <FormInput
         name='price'
         label='PRICE'
         placeholder='For example: 1000'
         maxLength={10}
+        type='Input'
       />
       <div className={s['button-container']}>
         <div className={s.button}>

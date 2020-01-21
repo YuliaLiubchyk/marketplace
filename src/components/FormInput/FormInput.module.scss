@@ -1,13 +1,16 @@
-.input {
+.input-container {
     background: #F9FAFB;
     border: 1px solid #DEDEE0;
     box-sizing: border-box;
     border-radius: 5px;
     width: 60%;
-    height: 46px;
     margin: 0 auto;
     padding-left: 20px;
     display: block;
+}
+
+input.input-container {
+    height: 46px;
 }
 
 .label {
@@ -22,6 +25,8 @@
     font-weight: 500;
 }
 
-input[name="description"] {
+textarea {
     height: 140px;
+    resize: none;
+    padding-top: 16px;
 }
