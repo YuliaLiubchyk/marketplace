@@ -48,7 +48,7 @@ function AddProduct() {
       />
       <div className={s['button-container']}>
         <div className={s.button}>
-          <span className={s['button-label']}>Submmit</span>
+          <span className={s['button-label']}>Submit</span>
         </div>
       </div>
     </FormContainer>
