@@ -23,7 +23,7 @@ function UploadArea(props) {
     </div>
 }
 
-const ChildComponents = {
+const childComponents = {
     Input: SimpleInput,
     TextArea: TextArea,
     Upload: UploadArea
@@ -31,12 +31,14 @@ const ChildComponents = {
 
 function FormInput({ label, name, type, ...props }) {
     const value = useContext(FormContext);
-    const Component = ChildComponents[type];
+    const Component = type
+        ? childComponents[type]
+        : SimpleInput;
     return <div>
         <label>
             <div className={s.label}>{label}</div>
             <Component {...props}
-                value={value.formState[name]} 
+                value={value.formState[name]}
                 name={name}
                 onChange={(e) => value.onChange(name, e)}
                 className={s['input-container']} />
