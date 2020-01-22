@@ -10,9 +10,24 @@ function TextArea(props) {
     return <textarea {...props} />
 }
 
+function UploadArea(props) {
+    return <div {...props}>
+        <div className={s['upload-container']}>
+            <input
+                type="file"
+                accept=".png, .jpg"
+            />
+            <hr />
+            <hr className={s.horizontal} />
+        </div>
+
+    </div>
+}
+
 const ChildComponents = {
     Input: SimpleInput,
-    TextArea: TextArea
+    TextArea: TextArea,
+    Upload: UploadArea
 }
 
 function FormInput({ label, name, type, ...props }) {

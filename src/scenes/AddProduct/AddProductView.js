@@ -37,7 +37,7 @@ function AddProduct() {
       <FormInput
         name='photos'
         label='PHOTOS'
-        type='Input'
+        type='Upload'
       />
       <FormInput
         name='price'

@@ -30,3 +30,30 @@ textarea {
     resize: none;
     padding-top: 16px;
 }
+
+.upload-container {
+    width: 60px;
+    height: 60px;
+    background-color: #E4E4E4;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    display: flex;
+}
+
+div hr {
+    border-color: #349A89;
+    border-width: 3px;
+    height: 24px;
+    position: absolute;
+    top: 10%;
+    left: 44%;
+}
+
+.horizontal {
+    transform: rotate(-90deg);
+}
+
+input[type="file"]{
+    display: none;
+}
