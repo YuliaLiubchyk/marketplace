@@ -4,7 +4,7 @@ import s from './Button.module.scss';
 const Button = ({ labelValue, ...rest }) => {
     return <div className={s['button-container']} {...rest}>
         <div className={s.button}>
-            <span className={s['button-label']}>
+            <span>
                 {labelValue}
             </span>
         </div>
