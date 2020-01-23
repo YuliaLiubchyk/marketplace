@@ -2,18 +2,20 @@ import React from 'react';
 import { FormContainer, FormInput } from '../../components/index';
 import s from './AddProduct.module.scss';
 
-function AddProduct() {
+function AddProduct({ handleUpload }) {
   const initialValue = {
     title: '',
     description: '',
     price: 0,
-    photos: '',
+    photos: [],
     location: ''
   };
 
   return <div className={s.container}>
     <div className={s.title}>Add product</div>
-    <FormContainer initialValue={initialValue} >
+    <FormContainer
+      initialValue={initialValue}
+      handleUpload={handleUpload}>
       <FormInput
         name='title'
         label='TITLE'
@@ -46,11 +48,6 @@ function AddProduct() {
         maxLength={10}
         type='Input'
       />
-      <div className={s['button-container']}>
-        <div className={s.button}>
-          <span className={s['button-label']}>Submit</span>
-        </div>
-      </div>
     </FormContainer>
   </div>
 }

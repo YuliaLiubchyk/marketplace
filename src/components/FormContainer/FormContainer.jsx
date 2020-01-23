@@ -1,4 +1,5 @@
 import React, { Component, createContext } from 'react';
+import { Button } from '../../components/index';
 
 //TODO:: rewrite on functional component with hook's
 export const FormContext = createContext(null);
@@ -8,10 +9,13 @@ class FormContainer extends Component {
     constructor(props) {
         super(props);
         this.state = props.initialValue;
+        this.handleUpload = props.handleUpload;
     }
 
-    onChange(name, e) {
-        this.setState({ [name]: e.target.value });
+    onChange(name, value) {
+        this.setState({
+            [name]: value
+        });
     }
 
     render() {
@@ -22,6 +26,9 @@ class FormContainer extends Component {
 
         return <FormContext.Provider value={value}>
             {this.props.children}
+            <Button
+                onClick={() => this.handleUpload(this.state)}
+                labelValue={'Submit'} />
         </FormContext.Provider>
     }
 

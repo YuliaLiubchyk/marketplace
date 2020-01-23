@@ -1,27 +1,17 @@
 import React, { useContext } from 'react';
 import { FormContext } from '../FormContainer/FormContainer';
 import s from './FormInput.module.scss';
+import UploadArea from './UploadArea.jsx';
 
-function SimpleInput(props) {
-    return <input {...props} />
-}
+const SimpleInput = ({ name, onChange, ...rest }) => <input
+    {...rest}
+    onChange={(e) => onChange(name, e.target.value)}
+/>;
 
-function TextArea(props) {
-    return <textarea {...props} />
-}
-
-function UploadArea(props) {
-    return <div {...props}>
-        <div className={s['upload-container']}>
-            <input
-                type="file"
-                accept=".png, .jpg"
-            />
-            <hr />
-            <hr className={s.horizontal} />
-        </div>
-    </div>
-}
+const TextArea = ({ name, onChange, ...rest }) => <textarea
+    {...rest}
+    onChange={(e) => onChange(name, e.target.value)}
+/>;
 
 const childComponents = {
     Input: SimpleInput,
@@ -29,7 +19,7 @@ const childComponents = {
     Upload: UploadArea
 }
 
-function FormInput({ label, name, type, ...props }) {
+const FormInput = ({ label, name, type, ...props }) => {
     const value = useContext(FormContext);
     const Component = type
         ? childComponents[type]
@@ -40,11 +30,10 @@ function FormInput({ label, name, type, ...props }) {
             <Component {...props}
                 value={value.formState[name]}
                 name={name}
-                onChange={(e) => value.onChange(name, e)}
+                onChange={value.onChange}
                 className={s['input-container']} />
         </label>
     </div>
-}
+};
 
 export default FormInput;
-

@@ -14,10 +14,10 @@ const mapDispatchToProps = {
     handleUpload: uploadProduct
 };
 
-function AddProductContainer() {
+function AddProductContainer({handleUpload}) {
     return <div>
         <Header theme="dark" />
-        <AddProductView/>
+        <AddProductView handleUpload={handleUpload}/>
     </div>
 
 }

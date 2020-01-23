@@ -17,7 +17,7 @@ function ModalSwitch() {
   const background = location.state && location.state.background;
   return (<div>
     <Switch location={background || location} >
-      <Route exact path={ADD_PRODUCTS} component={AddProductContainer} />
+      <PrivateRoute exact path={ADD_PRODUCTS} component={AddProductContainer} />
       <Route exact path={HOME} component={Home} />
       <Route exact path={PRODUCT} component={ProductContainer} />
       <PrivateRoute exact path={INBOX} component={Inbox} />

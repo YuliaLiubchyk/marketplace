@@ -41,7 +41,7 @@ textarea {
     display: flex;
 }
 
-div hr {
+div.upload-container hr {
     border-color: #349A89;
     border-width: 3px;
     height: 24px;
@@ -56,4 +56,9 @@ div hr {
 
 input[type="file"]{
     display: none;
+}
+
+.upload-list {
+    display: inline-flex;
+    align-items: center;
 }

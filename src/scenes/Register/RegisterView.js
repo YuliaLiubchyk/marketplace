@@ -1,10 +1,10 @@
 import React from 'react';
-import {Input} from '../../components';
-import {Link} from 'react-router-dom';
-import {LOGIN} from '../../constants/routesConstants';
+import { Input, Button } from '../../components/index';
+import { Link } from 'react-router-dom';
+import { LOGIN } from '../../constants/routesConstants';
 import s from './Register.module.scss';
 
-function Register({handleRegister, handleFieldChange}) {
+function Register({ handleRegister, handleFieldChange }) {
   const _handleEnterPressed = (e) => {
     if (e.key === 'Enter') {
       handleRegister()
@@ -40,11 +40,10 @@ function Register({handleRegister, handleFieldChange}) {
         isShowProperty={true}
         onChange={handleFieldChange}
       />
-      <div className={s['button-container']}>
-        <div className={s.button} onClick={handleRegister}>
-          <span className={s['button-label']}>Register</span>
-        </div>
-      </div>
+      <Button
+        labelValue={'Register'}
+        onClick={handleRegister}
+      />
     </div>
     <div className={`${s.container} ${s['login-container']}`}>
       <div className={s['login-text']}>
