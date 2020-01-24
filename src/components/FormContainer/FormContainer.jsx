@@ -1,36 +1,25 @@
-import React, { Component, createContext } from 'react';
+import React, { Component, createContext, useState } from 'react';
 import { Button } from '../../components/index';
+import { useHistory } from 'react-router-dom';
 
-//TODO:: rewrite on functional component with hook's
 export const FormContext = createContext(null);
 
-class FormContainer extends Component {
+const FormContainer = ({ initialValue, handleUpload, children }) => {
+    const [formState, setFormState] = useState(initialValue);
 
-    constructor(props) {
-        super(props);
-        this.state = props.initialValue;
-        this.handleUpload = props.handleUpload;
-    }
+    const value = {
+        formState: formState,
+        onChange: (name, value) => setFormState({ ...formState, [name]: value, })
+    };
 
-    onChange(name, value) {
-        this.setState({
-            [name]: value
-        });
-    }
+    const history = useHistory();
 
-    render() {
-        const value = {
-            formState: this.state,
-            onChange: (name, e) => this.onChange(name, e)
-        };
-
-        return <FormContext.Provider value={value}>
-            {this.props.children}
-            <Button
-                onClick={() => this.handleUpload(this.state)}
-                labelValue={'Submit'} />
-        </FormContext.Provider>
-    }
+    return <FormContext.Provider value={value}>
+        {children}
+        <Button
+            onClick={() => handleUpload(formState, history)}
+            labelValue={'Submit'} />
+    </FormContext.Provider>
 
 }
 
