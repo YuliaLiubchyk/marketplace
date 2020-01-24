@@ -9,7 +9,13 @@ const UploadArea = ({ name, value, onChange, ...rest }) => {
     }
     return <div
         {...rest}
-        onChange={(e) => onChange(name, [e.target.value, ...value])}>
+        onChange={(e) => {
+            const file = e.target.files[0];
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = (event) => onChange(name, [event.target.result]);
+        }
+        }>
         <div className={s['upload-list']}>
             <div className={s['upload-container']}>
                 <input
@@ -19,7 +25,7 @@ const UploadArea = ({ name, value, onChange, ...rest }) => {
                 <hr />
                 <hr className={s.horizontal} />
             </div>
-            <UploadedFiles value={value} />
+            {/* <UploadedFiles value={value} /> */}
         </div>
     </div>
 }
