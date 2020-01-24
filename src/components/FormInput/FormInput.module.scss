@@ -32,8 +32,6 @@ textarea {
 }
 
 .upload-container {
-    width: 60px;
-    height: 60px;
     background-color: #E4E4E4;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -61,4 +59,10 @@ input[type="file"]{
 .upload-list {
     display: inline-flex;
     align-items: center;
+
+    div {
+        width: 60px;
+        height: 60px;
+        margin-right: 10px;
+    }
 }
