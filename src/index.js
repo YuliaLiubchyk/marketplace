@@ -13,14 +13,6 @@ class App extends Component {
   constructor(props) {
     super(props);
     props.dispatch(appOperations.init());
-    console.log("constructor");
-  }
-
-  componentDidMount(props) {
-    // const history = useHistory();
-    // history.replace()
-    console.log(props)
-    console.log("did mount");
   }
 
   render() {
