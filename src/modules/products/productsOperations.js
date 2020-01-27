@@ -23,9 +23,11 @@ export const uploadProduct = (body, history) => {
             Api.Products.upload(body)
                 .then(() => {
                     dispatch(fetchLatest())
-                        .then(() => history.push(HOME));
+                        .then(() => {
+                            history.push(HOME);
+                            dispatch(actions.uploadProduct.success());
+                        });
                 });
-            dispatch(actions.uploadProduct.success());
 
         } catch (err) {
             dispatch(actions.uploadProduct.error({ message: err.message }));
