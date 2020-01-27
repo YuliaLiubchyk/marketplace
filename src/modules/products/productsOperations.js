@@ -20,10 +20,13 @@ export const uploadProduct = (body, history) => {
     return async function uploadProduct(dispatch) {
         try {
             dispatch(actions.uploadProduct.start());
-            await Api.Products.upload(body);
-            await dispatch(fetchLatest());
+            Api.Products.upload(body)
+                .then(() => {
+                    dispatch(fetchLatest())
+                        .then(() => history.push(HOME));
+                });
             dispatch(actions.uploadProduct.success());
-            history.push(HOME);
+
         } catch (err) {
             dispatch(actions.uploadProduct.error({ message: err.message }));
         }

@@ -6,7 +6,6 @@ import { store } from './store/createStore';
 import * as appOperations from './modules/app/appOperations';
 import { Loading } from './components';
 import './styles.scss';
-import { useHistory } from 'react-router-dom';
 
 class App extends Component {
 

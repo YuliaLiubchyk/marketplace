@@ -75,7 +75,7 @@ export const Products = {
     },
 
     upload(product) {
-        axios.post(urls.uploadProduct, product);
+       return axios.post(urls.uploadProduct, product);
     }
 };
 
