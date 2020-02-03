@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Input } from '../../components/index';
+import { Input, Button } from '../../components/index';
 import s from './Login.module.scss';
 import { REGISTER } from '../../constants/routesConstants';
 
@@ -12,7 +12,7 @@ function Login({ handleLogin, handleFieldChange, isLoading }) {
   };
 
   return (<div onKeyDown={_handleEnterPressed} className={s.container}>
-    <div className={`${s['form-container']} ${s['form-container']}`}>
+    <div className={s['form-container']}>
       <div className={s.login}>Login</div>
       <Input
         label='email'
@@ -23,15 +23,15 @@ function Login({ handleLogin, handleFieldChange, isLoading }) {
         type='password'
         name='password'
         label='password'
+        isShowProperty={true}
         onChange={handleFieldChange} />
       <div className={s.hint}>
         <Link to={REGISTER} className={s['hint-text']}>Don't remember password?</Link>
       </div>
-      <div className={s['button-container']}>
-        <div onClick={handleLogin} className={s.button}>
-          <span className={s['button-label']}>{isLoading ? 'Loading' : 'Continue'}</span>
-        </div>
-      </div>
+      <Button
+        onClick={handleLogin}
+        labelValue={isLoading ? 'Loading' : 'Continue'}
+      />
     </div>
     <div className={`${s['form-container']} ${s['register-container']}`}>
       <div className={s['register-text']}>

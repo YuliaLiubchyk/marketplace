@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch, useLocation, useHistory } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, useLocation } from 'react-router-dom';
 import Home from './Home/Home';
 import Auth from './Auth/Auth';
 import NotFound from './NotFound/NotFound';
@@ -17,7 +17,7 @@ function ModalSwitch() {
   const background = location.state && location.state.background;
   return (<div>
     <Switch location={background || location} >
-      <Route exact path={ADD_PRODUCTS} component={AddProductContainer} />
+      <PrivateRoute exact path={ADD_PRODUCTS} component={AddProductContainer} />
       <Route exact path={HOME} component={Home} />
       <Route exact path={PRODUCT} component={ProductContainer} />
       <PrivateRoute exact path={INBOX} component={Inbox} />

@@ -1,8 +1,9 @@
 import React from 'react';
 import AddProductView from './AddProductView';
 import { uploadProduct } from '../../modules/products/productsOperations'
-import { Header } from '../../components/index';
+import { Header, Loading } from '../../components/index';
 import { connect } from 'react-redux';
+import s from './AddProduct.module.scss';
 
 const mapStateToProps = (state) => {
     return {
@@ -14,10 +15,15 @@ const mapDispatchToProps = {
     handleUpload: uploadProduct
 };
 
-function AddProductContainer() {
+function AddProductContainer({ handleUpload, isLoading }) {
     return <div>
         <Header theme="dark" />
-        <AddProductView/>
+        <AddProductView handleUpload={handleUpload} />
+        {isLoading &&
+            <div className={s.background}>
+                <Loading />
+            </div>
+        }
     </div>
 
 }

@@ -1,0 +1,25 @@
+.button-container {
+    text-align: center;
+    margin-top: 32px;
+}
+
+.button {
+    background-color: #349A89;
+    border-radius: 5px;
+    width: 50%;
+    height: 50px;
+    outline: none;
+    display: table;
+    cursor: pointer;
+    margin: auto;
+
+    span {
+        font-family: Helvetica;
+        color: white;
+        font-size: 16px;
+        letter-spacing: 0.4px;
+        font-weight: normal;
+        display: table-cell;
+        vertical-align: middle;
+    }
+}

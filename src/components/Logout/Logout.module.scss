@@ -4,14 +4,13 @@
 }
 
 .logout-container {
-    position: absolute;
+    position: fixed;
     width: 204px;
     height: 150px;
     background: #FFFFFF;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
-    right: 194px;
-    margin-top: 6px;
+    margin-left: -164px;
 }
 
 .container {
@@ -23,7 +22,6 @@
     border-radius: 50px;
     text-align: center;
     display: table;
-    position: relative;
     cursor: pointer;
 }
 

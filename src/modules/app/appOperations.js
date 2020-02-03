@@ -1,4 +1,5 @@
 import * as actions from './appActions';
+import * as authActions from '../auth/authActions';
 import Api from '../../api';
 import { fetchViewer } from '../viewer/viewerOperations';
 import {fetchLatest} from "../products/productsOperations";
@@ -9,6 +10,7 @@ export const init = () => {
             dispatch(actions.initialization.start());
             Api.init();
             if (Api.Auth.isLoggedIn) {
+                dispatch(authActions.login.success());
                 await dispatch(fetchViewer());
             }
             await dispatch(fetchLatest());

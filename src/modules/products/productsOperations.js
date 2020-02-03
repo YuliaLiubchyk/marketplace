@@ -1,5 +1,6 @@
 import * as actions from './productsActions';
 import Api from '../../api/index';
+import { HOME } from '../../constants/routesConstants';
 
 export const fetchLatest = () => {
     return async function fetchLatest(dispatch) {
@@ -15,12 +16,19 @@ export const fetchLatest = () => {
     }
 };
 
-export const uploadProduct = (body) => {
+export const uploadProduct = (body, history) => {
     return async function uploadProduct(dispatch) {
         try {
             dispatch(actions.uploadProduct.start());
-            await Api.Products.upload(body);
-            dispatch(actions.uploadProduct.success());
+            Api.Products.upload(body)
+                .then(() => {
+                    dispatch(fetchLatest())
+                        .then(() => {
+                            history.push(HOME);
+                            dispatch(actions.uploadProduct.success());
+                        });
+                });
+
         } catch (err) {
             dispatch(actions.uploadProduct.error({ message: err.message }));
         }
