@@ -25,9 +25,9 @@ const UploadArea = ({ name, value, onChange, ...rest }) => {
                 <hr className={s.horizontal} />
             </div>
             {
-                filesNames.map((el, index) =>
-                    <div key={index}>
-                        {el}
+                filesNames.map((fileName, index) =>
+                    <div key={`${index}${fileName}`}>
+                        {fileName}
                     </div>)
             }
         </div>

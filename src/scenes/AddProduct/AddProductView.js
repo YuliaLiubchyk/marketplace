@@ -1,8 +1,9 @@
-import React from 'react';
-import { FormContainer, FormInput } from '../../components/index';
+import React, { useState } from 'react';
+import { FormContainer, FormInput, Button } from '../../components/index';
 import s from './AddProduct.module.scss';
+import { useHistory } from 'react-router-dom';
 
-function AddProduct({ handleUpload }) {
+const AddProduct = ({ handleUpload }) => {
   const initialValue = {
     title: '',
     description: '',
@@ -11,11 +12,17 @@ function AddProduct({ handleUpload }) {
     location: ''
   };
 
+  const [formState, setFormState] = useState(initialValue);
+  const history = useHistory();
+
+  const value = {
+    formState: formState,
+    onChange: (name, value) => setFormState({ ...formState, [name]: value, })
+  };
+
   return <div className={s.container}>
     <div className={s.title}>Add product</div>
-    <FormContainer
-      initialValue={initialValue}
-      handleUpload={handleUpload}>
+    <FormContainer value={value}>
       <FormInput
         name='title'
         label='TITLE'
@@ -48,6 +55,9 @@ function AddProduct({ handleUpload }) {
         maxLength={10}
         type='Input'
       />
+      <Button
+        onClick={() => handleUpload(formState, history)}
+        labelValue={'Submit'} />
     </FormContainer>
   </div>
 }
